@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-// const Task = ({ taskTitle, isEditing }) => {
-
 const Task = ({ task, setTask, setTasks, tasks }) => {
   const [text, setText] = useState(task.task);
 
@@ -18,7 +16,6 @@ const Task = ({ task, setTask, setTasks, tasks }) => {
 
   return (
     <div className="task">
-      {/* {isEditing ? ( */}
       {task.isEditing ? (
         <div className="task-container">
           <div className="task-title">
@@ -39,7 +36,6 @@ const Task = ({ task, setTask, setTasks, tasks }) => {
         <div className="task-container">
           <div className="task-title">
             <input type="checkbox" />
-            {/* <p>{taskTitle}</p> */}
             <p>{task.task}</p>
           </div>
           <div className="task-btn-container">
