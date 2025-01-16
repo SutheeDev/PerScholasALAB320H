@@ -29,8 +29,8 @@ const App = () => {
         </button>
       </form>
       <div className="task-container">
-        {tasks.map((task) => (
-          <Task />
+        {tasks.map((task, index) => (
+          <Task taskTitle={task.task} key={index} />
         ))}
       </div>
     </main>
