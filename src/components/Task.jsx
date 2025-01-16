@@ -1,5 +1,10 @@
+import { useState } from "react";
+
 // const Task = ({ taskTitle, isEditing }) => {
-const Task = ({ task, setTasks, tasks }) => {
+
+const Task = ({ task, setTask, setTasks, tasks }) => {
+  const [text, setText] = useState(task.task);
+
   return (
     <div className="task">
       {/* {isEditing ? ( */}
@@ -7,7 +12,11 @@ const Task = ({ task, setTasks, tasks }) => {
         <div className="task-container">
           <div className="task-title">
             <input type="checkbox" />
-            <input type="text" />
+            <input
+              type="text"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            />
           </div>
           <div className="task-btn-container">
             <button className="btn task-btn">Save</button>
@@ -27,8 +36,8 @@ const Task = ({ task, setTasks, tasks }) => {
                 setTasks(
                   tasks.map((eachTask) =>
                     eachTask.id === task.id
-                      ? { ...task, isEditing: true }
-                      : { ...task }
+                      ? { ...eachTask, isEditing: true }
+                      : { ...eachTask }
                   )
                 )
               }

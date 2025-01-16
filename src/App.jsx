@@ -34,7 +34,13 @@ const App = () => {
       <div className="task-container">
         {tasks.map((task) => (
           // <Task taskTitle={task.task} isEditing={task.isEditing} key={index} />
-          <Task task={task} setTasks={setTasks} tasks={tasks} key={task.id} />
+          <Task
+            task={task}
+            setTask={setTask}
+            setTasks={setTasks}
+            tasks={tasks}
+            key={task.id}
+          />
         ))}
       </div>
     </main>
