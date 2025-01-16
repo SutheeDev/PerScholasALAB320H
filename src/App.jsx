@@ -4,7 +4,7 @@ import Task from "./components/task";
 const App = () => {
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState([]);
-  const [isEditing, setIsEditing] = useState(false);
+  // const [isEditing, setIsEditing] = useState(true);
 
   const handleChange = (e) => {
     setTask(e.target.value);
@@ -15,6 +15,7 @@ const App = () => {
     const newTask = {
       task: task,
       isCompleted: false,
+      isEditing: false,
     };
     setTasks([newTask, ...tasks]);
     setTask("");
@@ -31,7 +32,7 @@ const App = () => {
       </form>
       <div className="task-container">
         {tasks.map((task, index) => (
-          <Task taskTitle={task.task} isEditing={isEditing} key={index} />
+          <Task taskTitle={task.task} isEditing={task.isEditing} key={index} />
         ))}
       </div>
     </main>

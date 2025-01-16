@@ -5,6 +5,16 @@ const Task = ({ taskTitle, isEditing }) => {
         <div className="task-container">
           <div className="task-title">
             <input type="checkbox" />
+            <input type="text" />
+          </div>
+          <div className="task-btn-container">
+            <button className="btn task-btn">Save</button>
+          </div>
+        </div>
+      ) : (
+        <div className="task-container">
+          <div className="task-title">
+            <input type="checkbox" />
             <p>{taskTitle}</p>
           </div>
           <div className="task-btn-container">
@@ -14,8 +24,6 @@ const Task = ({ taskTitle, isEditing }) => {
             </button>
           </div>
         </div>
-      ) : (
-        <div className="task-container">Edit task here</div>
       )}
     </div>
   );
