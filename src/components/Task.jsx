@@ -71,7 +71,10 @@ const Task = ({ task, setTask, setTasks, tasks }) => {
             >
               Edit
             </button>
-            <button className="btn task-btn" disabled={true}>
+            <button
+              className="btn task-btn"
+              disabled={task.isCompleted ? false : true}
+            >
               Delete
             </button>
           </div>
