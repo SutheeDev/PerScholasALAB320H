@@ -13,6 +13,7 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTask = {
+      id: tasks.length + 1,
       task: task,
       isCompleted: false,
       isEditing: false,
@@ -31,9 +32,9 @@ const App = () => {
         </button>
       </form>
       <div className="task-container">
-        {tasks.map((task, index) => (
+        {tasks.map((task) => (
           // <Task taskTitle={task.task} isEditing={task.isEditing} key={index} />
-          <Task task={task} setTasks={setTasks} tasks={tasks} key={index} />
+          <Task task={task} setTasks={setTasks} tasks={tasks} key={task.id} />
         ))}
       </div>
     </main>

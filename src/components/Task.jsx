@@ -25,8 +25,8 @@ const Task = ({ task, setTasks, tasks }) => {
               className="btn task-btn"
               onClick={() =>
                 setTasks(
-                  tasks.map((task) =>
-                    task.index === index
+                  tasks.map((eachTask) =>
+                    eachTask.id === task.id
                       ? { ...task, isEditing: true }
                       : { ...task }
                   )
