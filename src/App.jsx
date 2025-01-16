@@ -16,13 +16,14 @@ const App = () => {
       isCompleted: false,
     };
     setTasks([...tasks, newTask]);
+    setTask("");
   };
 
   return (
     <main>
       <h1>Create Todo List</h1>
       <form>
-        <input type="text" onChange={handleChange} />
+        <input type="text" onChange={handleChange} value={task} />
         <button onClick={handleSubmit} className="btn add-btn">
           Add
         </button>
