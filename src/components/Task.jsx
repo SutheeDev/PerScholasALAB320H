@@ -24,6 +24,10 @@ const Task = ({ task, setTask, setTasks, tasks }) => {
     );
   };
 
+  const deleteTask = () => {
+    setTasks(tasks.filter((eachTask) => eachTask.id !== task.id));
+  };
+
   return (
     <div className="task">
       {task.isEditing ? (
@@ -74,6 +78,7 @@ const Task = ({ task, setTask, setTasks, tasks }) => {
             <button
               className="btn task-btn"
               disabled={task.isCompleted ? false : true}
+              onClick={deleteTask}
             >
               Delete
             </button>

@@ -11,8 +11,16 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!task) {
+      return;
+    }
+
+    const maxId =
+      tasks.length > 0 ? Math.max(...tasks.map((task) => task.id)) : 0;
+
     const newTask = {
-      id: tasks.length + 1,
+      id: maxId + 1,
       task: task,
       isCompleted: false,
       isEditing: false,
