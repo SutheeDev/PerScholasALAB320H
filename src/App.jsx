@@ -29,9 +29,9 @@ const App = () => {
         </button>
       </form>
       <div className="task-container">
-        <Task />
-        <Task />
-        <Task />
+        {tasks.map((task) => (
+          <Task />
+        ))}
       </div>
     </main>
   );
