@@ -1,5 +1,5 @@
 // const Task = ({ taskTitle, isEditing }) => {
-const Task = ({ task, setTask }) => {
+const Task = ({ task, setTasks, tasks }) => {
   return (
     <div className="task">
       {/* {isEditing ? ( */}
@@ -21,7 +21,20 @@ const Task = ({ task, setTask }) => {
             <p>{task.task}</p>
           </div>
           <div className="task-btn-container">
-            <button className="btn task-btn">Edit</button>
+            <button
+              className="btn task-btn"
+              onClick={() =>
+                setTasks(
+                  tasks.map((task) =>
+                    task.index === index
+                      ? { ...task, isEditing: true }
+                      : { ...task }
+                  )
+                )
+              }
+            >
+              Edit
+            </button>
             <button className="btn task-btn" disabled={true}>
               Delete
             </button>
