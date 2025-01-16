@@ -1,7 +1,9 @@
-const Task = ({ taskTitle, isEditing }) => {
+// const Task = ({ taskTitle, isEditing }) => {
+const Task = ({ task, setTask }) => {
   return (
     <div className="task">
-      {isEditing ? (
+      {/* {isEditing ? ( */}
+      {task.isEditing ? (
         <div className="task-container">
           <div className="task-title">
             <input type="checkbox" />
@@ -15,7 +17,8 @@ const Task = ({ taskTitle, isEditing }) => {
         <div className="task-container">
           <div className="task-title">
             <input type="checkbox" />
-            <p>{taskTitle}</p>
+            {/* <p>{taskTitle}</p> */}
+            <p>{task.task}</p>
           </div>
           <div className="task-btn-container">
             <button className="btn task-btn">Edit</button>

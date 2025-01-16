@@ -32,7 +32,8 @@ const App = () => {
       </form>
       <div className="task-container">
         {tasks.map((task, index) => (
-          <Task taskTitle={task.task} isEditing={task.isEditing} key={index} />
+          // <Task taskTitle={task.task} isEditing={task.isEditing} key={index} />
+          <Task task={task} setTask={setTask} key={index} />
         ))}
       </div>
     </main>
