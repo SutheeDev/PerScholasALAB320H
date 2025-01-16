@@ -5,6 +5,17 @@ import { useState } from "react";
 const Task = ({ task, setTask, setTasks, tasks }) => {
   const [text, setText] = useState(task.task);
 
+  const saveEdit = (e) => {
+    e.preventDefault();
+    setTasks(
+      tasks.map((eachTask) =>
+        eachTask.id === task.id
+          ? { ...eachTask, isEditing: false, task: text }
+          : { ...eachTask }
+      )
+    );
+  };
+
   return (
     <div className="task">
       {/* {isEditing ? ( */}
@@ -19,7 +30,9 @@ const Task = ({ task, setTask, setTasks, tasks }) => {
             />
           </div>
           <div className="task-btn-container">
-            <button className="btn task-btn">Save</button>
+            <button className="btn task-btn" onClick={saveEdit}>
+              Save
+            </button>
           </div>
         </div>
       ) : (
