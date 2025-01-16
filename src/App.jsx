@@ -15,7 +15,7 @@ const App = () => {
       task: task,
       isCompleted: false,
     };
-    setTasks([...tasks, newTask]);
+    setTasks([newTask, ...tasks]);
     setTask("");
   };
 
