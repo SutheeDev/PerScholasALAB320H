@@ -9,7 +9,17 @@ const Task = ({ task, setTask, setTasks, tasks }) => {
       tasks.map((eachTask) =>
         eachTask.id === task.id
           ? { ...eachTask, isEditing: false, task: text }
-          : { ...eachTask }
+          : eachTask
+      )
+    );
+  };
+
+  const toggleCheckbox = () => {
+    setTasks(
+      tasks.map((eachTask) =>
+        eachTask.id === task.id
+          ? { ...eachTask, isCompleted: !eachTask.isCompleted }
+          : eachTask
       )
     );
   };
@@ -19,7 +29,11 @@ const Task = ({ task, setTask, setTasks, tasks }) => {
       {task.isEditing ? (
         <div className="task-container">
           <div className="task-title">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onChange={toggleCheckbox}
+              checked={task.isCompleted}
+            />
             <input
               type="text"
               value={text}
@@ -35,7 +49,11 @@ const Task = ({ task, setTask, setTasks, tasks }) => {
       ) : (
         <div className="task-container">
           <div className="task-title">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onChange={toggleCheckbox}
+              checked={task.isCompleted}
+            />
             <p>{task.task}</p>
           </div>
           <div className="task-btn-container">
