@@ -34,7 +34,12 @@ const App = () => {
       <div className="todo-container">
         <h1 className="appTitle">Create Todo List</h1>
         <form className="taskForm">
-          <input type="text" onChange={handleChange} value={task} />
+          <input
+            type="text"
+            onChange={handleChange}
+            value={task}
+            placeholder="Add your task"
+          />
           <button onClick={handleSubmit} className="btn add-btn">
             Add
           </button>
@@ -50,6 +55,12 @@ const App = () => {
             />
           ))}
         </div>
+        <p className="footer">
+          Developed by
+          <a href="https://www.sutheedev.com/" target="_blank">
+            Suthee
+          </a>
+        </p>
       </div>
     </main>
   );
