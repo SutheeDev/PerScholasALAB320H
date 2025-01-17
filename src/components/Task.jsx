@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Task = ({ task, setTask, setTasks, tasks }) => {
+const Task = ({ task, setTasks, tasks }) => {
   const [text, setText] = useState(task.task);
 
   const saveEdit = (e) => {

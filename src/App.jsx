@@ -46,13 +46,7 @@ const App = () => {
         </form>
         <div className="tasks-container">
           {tasks.map((task) => (
-            <Task
-              task={task}
-              setTask={setTask}
-              setTasks={setTasks}
-              tasks={tasks}
-              key={task.id}
-            />
+            <Task task={task} setTasks={setTasks} tasks={tasks} key={task.id} />
           ))}
         </div>
         <p className="footer">
