@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Task from "./components/task";
+import Task from "./components/Task";
 
 const App = () => {
   const [task, setTask] = useState("");
