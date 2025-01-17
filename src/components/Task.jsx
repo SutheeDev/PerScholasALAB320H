@@ -37,6 +37,7 @@ const Task = ({ task, setTask, setTasks, tasks }) => {
               type="checkbox"
               onChange={toggleCheckbox}
               checked={task.isCompleted}
+              className="checkbox"
             />
             <input
               type="text"
@@ -57,8 +58,9 @@ const Task = ({ task, setTask, setTasks, tasks }) => {
               type="checkbox"
               onChange={toggleCheckbox}
               checked={task.isCompleted}
+              className="checkbox"
             />
-            <p>{task.task}</p>
+            <p className="taskName">{task.task}</p>
           </div>
           <div className="task-btn-container">
             <button

@@ -31,23 +31,25 @@ const App = () => {
 
   return (
     <main>
-      <h1>Create Todo List</h1>
-      <form>
-        <input type="text" onChange={handleChange} value={task} />
-        <button onClick={handleSubmit} className="btn add-btn">
-          Add
-        </button>
-      </form>
-      <div className="task-container">
-        {tasks.map((task) => (
-          <Task
-            task={task}
-            setTask={setTask}
-            setTasks={setTasks}
-            tasks={tasks}
-            key={task.id}
-          />
-        ))}
+      <div className="todo-container">
+        <h1 className="appTitle">Create Todo List</h1>
+        <form className="taskForm">
+          <input type="text" onChange={handleChange} value={task} />
+          <button onClick={handleSubmit} className="btn add-btn">
+            Add
+          </button>
+        </form>
+        <div className="tasks-container">
+          {tasks.map((task) => (
+            <Task
+              task={task}
+              setTask={setTask}
+              setTasks={setTasks}
+              tasks={tasks}
+              key={task.id}
+            />
+          ))}
+        </div>
       </div>
     </main>
   );
